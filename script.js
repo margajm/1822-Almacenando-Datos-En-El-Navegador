@@ -1,30 +1,25 @@
-import checkComplete from './components/checkComplete.js';
-import deleteIcon from './components/deleteIcon.js';
+//Importamos nuestra constante addTask para poder usar la función que vive dentro de ella.
+import { addTask } from "./components/addTask.js";
+//Importaremos nuestra función de readTasks aquí porque queremos que se ejecute cuando cargue o se actualize la página.
+import { displayTasks } from "./components/readTasks.js";
 
-const btn = document.querySelector('[data-form-btn]');
+//Tenemos a btn
+/*Aquí estamos seleccionando el botón de agregar*/
+const btn = document.querySelector("[data-form-btn]");
 
-const createTask = (evento) => {
-  evento.preventDefault();
-  const input = document.querySelector('[data-form-input]');
-  const value = input.value;
-  const list = document.querySelector('[data-list]');
-  const task = document.createElement('li');
-  task.classList.add('card');
-  input.value = '';
-  //backticks
-  const taskContent = document.createElement('div');
+//Nuestro listener
+// Será cuando el usuario haga click
 
-  const titleTask = document.createElement('span');
-  titleTask.classList.add('task');
-  titleTask.innerText = value;
-  taskContent.appendChild(checkComplete());
-  taskContent.appendChild(titleTask);
-  // task.innerHTML = content;
+//La acción 
+//Será que al hacer click el usuario le aparecerá en la consola "crear tarea".
 
-  task.appendChild(taskContent);
-  task.appendChild(deleteIcon());
-  list.appendChild(task);
-};
+//AddEventListener tiene 2 parámetros
+// 1 . ¿Cuál es el elemento a escuchar?
+//2. Después que es lo que quieren que hagas
 
-//Arrow functions o funciones anonimas
-btn.addEventListener('click', createTask);
+//Arrow functions o funciones anónimas:
+/*Cuando le dé clic en el botón agregar el llama a la función y debe agregar la tarea.*/
+btn.addEventListener('click', addTask);
+
+//Mandamos llamar nuestra función readTasks para que nos lea la info guardada en localStorage cuando  cargue o se actualize la página.
+displayTasks();

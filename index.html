@@ -7,14 +7,18 @@
     <title>TODO App</title>
     <link rel="icon" type="image/png" href="./assets/rocket.svg" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <!-- Agregamos una fuente-->
     <link
       href="https://fonts.googleapis.com/css2?family=Dosis&family=Open+Sans&family=Parisienne&display=swap"
       rel="stylesheet"
     />
+    <!-- Agregamos una librería de iconos-->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
       rel="stylesheet"
     />
+    <!-- Importamos los estilos -->
+
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -31,6 +35,10 @@
               autocomplete="off"
               data-form-input
             />
+
+            <!-- Pondremos para poder agarrar el valor de la fecha -->
+            <input type = "datetime-local" data-form-date placeholder="YYYY/MM/DD"/>
+
             <button type="submit" class="btnCreate" data-form-btn>
               Agregar <i class="fas fa-plus-circle"></i>
             </button>
@@ -40,6 +48,11 @@
         </ul>
       </div>
     </main>
+    <!-- Agregamos la libreria uuid para poder usar identificadores únicos para cada tarea. -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js" integrity="sha512-UNM1njAgOFUa74Z0bADwAq8gbTcqZC8Ej4xPSzpnh0l6KMevwvkBvbldF9uR++qKeJ+MOZHRjV1HZjoRvjDfNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Agregamos la librería moment para poner en el formato correcto la fecha. -->
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <!-- Esto es para importar nuestro archivo JavaScript, en type pusimos module porque es de tipo modulo ya que nuestro JavaScript esta dividido en varios archivos.-->
     <script type="module" src="script.js"></script>
   </body>
 </html>

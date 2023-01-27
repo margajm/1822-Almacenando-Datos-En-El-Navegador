@@ -46,7 +46,7 @@ form {
   padding: 10px;
   border: 1px solid #eee;
   outline: none;
-  width: 65%;
+  width: 35%;
 }
 
 .inputForm::placeholder {
@@ -124,4 +124,11 @@ form {
 
 .noTasks {
   font-size: 48px;
+}
+
+/*Mandamos llamar nuestro elemento li que creamos en dateElement.js*/
+.date {
+  width: 100%;
+  /*Espaciamiento interno de 15px a todos los lados*/
+  padding: 15px;
 }
